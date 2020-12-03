@@ -2,7 +2,7 @@ export const authEndpoint = 'https://accounts.spotify.com/authorize';
 
 // Replace with your app's client ID, redirect URI and desired scopes
 export const client_id = '089c0e89579c46ae9b28bf07c70471dd';
-export const redirect_uri = 'http://localhost:3000/'; //'http://10.163.1.116:3000/';
+export const redirect_uri = 'https://trapempire.herokuapp.com'; //'http://localhost:3000/'; //'http://10.163.1.116:3000/';
 export const scopes = [
 	'user-top-read',
 	'user-read-currently-playing',
