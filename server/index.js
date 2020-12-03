@@ -11,6 +11,15 @@ const connectDB = require('./config/db');
 
 connectDB();
 
+app.use(function (req, res, next) {
+	const host = req.get('Host');
+	if (req.get('X-Forwarded-Proto') !== 'https') {
+		if (process.env.NODE_ENV === 'production' && host === 'trapempire.com') {
+			res.redirect('https://' + req.get('Host') + req.url);
+		}
+	} else next();
+});
+
 app.use(morgan('combined'));
 
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
