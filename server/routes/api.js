@@ -31,7 +31,9 @@ router.get('/authurl', function (req, res) {
 
 router.post('/authtoken', function (req, res) {
 	const { code } = req.body;
+	console.log({ code });
 	const spotifyApi = new SpotifyWebApi(credentials);
+	console.log({ credentials });
 	// Retrieve an access token and a refresh token
 	spotifyApi.authorizationCodeGrant(code).then(
 		function (data) {
