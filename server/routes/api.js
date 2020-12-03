@@ -6,7 +6,6 @@ const {
 	scopes,
 	credentials,
 } = require('../config/utils');
-console.log('API');
 const SpotifyWebApi = require('spotify-web-api-node');
 
 router.get('/', async function (req, res) {
