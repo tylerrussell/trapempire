@@ -90,7 +90,7 @@ const requests = {
 		prop: 'access_token',
 	},
 	authToken: (code) => {
-		const redirect_uri = process.env.redirect_uri || 'http://localhost:3000/';
+		const redirect_uri = process.env.SPOTIFY_REDIRECT_URI; //'http://localhost:3000/';
 		return {
 			method: 'post',
 			url: 'https://accounts.spotify.com/api/token',
